@@ -28,166 +28,166 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.foundWordsBox = new System.Windows.Forms.ListBox();
-            this.wordsFoundLabel = new System.Windows.Forms.Label();
-            this.readFileBtn = new System.Windows.Forms.Button();
-            this.assembleMessageBtn = new System.Windows.Forms.Button();
-            this.messageCountLbl = new System.Windows.Forms.Label();
-            this.countLbl = new System.Windows.Forms.Label();
-            this.messageChoiceDrop = new System.Windows.Forms.ComboBox();
-            this.selectFileBtn = new System.Windows.Forms.Button();
-            this.selectedFileTxt = new System.Windows.Forms.TextBox();
-            this.selectedFileLbl = new System.Windows.Forms.Label();
-            this.reasembledMessageTxt = new System.Windows.Forms.TextBox();
-            this.selectMessageLbl = new System.Windows.Forms.Label();
-            this.reasembeledMessageLbl = new System.Windows.Forms.Label();
-            this.SuspendLayout();
+            foundWordsBox = new ListBox();
+            wordsFoundLabel = new Label();
+            readFileBtn = new Button();
+            assembleMessageBtn = new Button();
+            messageCountLbl = new Label();
+            countLbl = new Label();
+            messageChoiceDrop = new ComboBox();
+            selectFileBtn = new Button();
+            selectedFileTxt = new TextBox();
+            selectedFileLbl = new Label();
+            reasembledMessageTxt = new TextBox();
+            selectMessageLbl = new Label();
+            reasembeledMessageLbl = new Label();
+            SuspendLayout();
             // 
             // foundWordsBox
             // 
-            this.foundWordsBox.FormattingEnabled = true;
-            this.foundWordsBox.ItemHeight = 15;
-            this.foundWordsBox.Location = new System.Drawing.Point(373, 70);
-            this.foundWordsBox.Name = "foundWordsBox";
-            this.foundWordsBox.Size = new System.Drawing.Size(146, 289);
-            this.foundWordsBox.TabIndex = 0;
+            foundWordsBox.FormattingEnabled = true;
+            foundWordsBox.ItemHeight = 15;
+            foundWordsBox.Location = new Point(373, 70);
+            foundWordsBox.Name = "foundWordsBox";
+            foundWordsBox.Size = new Size(146, 289);
+            foundWordsBox.TabIndex = 0;
             // 
             // wordsFoundLabel
             // 
-            this.wordsFoundLabel.AutoSize = true;
-            this.wordsFoundLabel.Location = new System.Drawing.Point(373, 49);
-            this.wordsFoundLabel.Name = "wordsFoundLabel";
-            this.wordsFoundLabel.Size = new System.Drawing.Size(91, 15);
-            this.wordsFoundLabel.TabIndex = 1;
-            this.wordsFoundLabel.Text = "Detected Words";
+            wordsFoundLabel.AutoSize = true;
+            wordsFoundLabel.Location = new Point(373, 49);
+            wordsFoundLabel.Name = "wordsFoundLabel";
+            wordsFoundLabel.Size = new Size(91, 15);
+            wordsFoundLabel.TabIndex = 1;
+            wordsFoundLabel.Text = "Detected Words";
             // 
             // readFileBtn
             // 
-            this.readFileBtn.Enabled = false;
-            this.readFileBtn.Location = new System.Drawing.Point(189, 156);
-            this.readFileBtn.Name = "readFileBtn";
-            this.readFileBtn.Size = new System.Drawing.Size(101, 38);
-            this.readFileBtn.TabIndex = 2;
-            this.readFileBtn.Text = "Read File";
-            this.readFileBtn.UseVisualStyleBackColor = true;
+            readFileBtn.Enabled = false;
+            readFileBtn.Location = new Point(189, 156);
+            readFileBtn.Name = "readFileBtn";
+            readFileBtn.Size = new Size(101, 38);
+            readFileBtn.TabIndex = 2;
+            readFileBtn.Text = "Read File";
+            readFileBtn.UseVisualStyleBackColor = true;
+            readFileBtn.Click += readFileBtn_Click;
             // 
             // assembleMessageBtn
             // 
-            this.assembleMessageBtn.Enabled = false;
-            this.assembleMessageBtn.Location = new System.Drawing.Point(189, 267);
-            this.assembleMessageBtn.Name = "assembleMessageBtn";
-            this.assembleMessageBtn.Size = new System.Drawing.Size(101, 38);
-            this.assembleMessageBtn.TabIndex = 3;
-            this.assembleMessageBtn.Text = "Assemble Message";
-            this.assembleMessageBtn.UseVisualStyleBackColor = true;
-            this.assembleMessageBtn.Click += new System.EventHandler(this.assembleMessageBtn_Click);
+            assembleMessageBtn.Enabled = false;
+            assembleMessageBtn.Location = new Point(189, 267);
+            assembleMessageBtn.Name = "assembleMessageBtn";
+            assembleMessageBtn.Size = new Size(101, 38);
+            assembleMessageBtn.TabIndex = 3;
+            assembleMessageBtn.Text = "Assemble Message";
+            assembleMessageBtn.UseVisualStyleBackColor = true;
+            assembleMessageBtn.Click += assembleMessageBtn_Click;
             // 
             // messageCountLbl
             // 
-            this.messageCountLbl.AutoSize = true;
-            this.messageCountLbl.Location = new System.Drawing.Point(33, 168);
-            this.messageCountLbl.Name = "messageCountLbl";
-            this.messageCountLbl.Size = new System.Drawing.Size(98, 15);
-            this.messageCountLbl.TabIndex = 4;
-            this.messageCountLbl.Text = "Message Count : ";
+            messageCountLbl.AutoSize = true;
+            messageCountLbl.Location = new Point(33, 168);
+            messageCountLbl.Name = "messageCountLbl";
+            messageCountLbl.Size = new Size(98, 15);
+            messageCountLbl.TabIndex = 4;
+            messageCountLbl.Text = "Message Count : ";
             // 
             // countLbl
             // 
-            this.countLbl.AutoSize = true;
-            this.countLbl.Location = new System.Drawing.Point(137, 168);
-            this.countLbl.Name = "countLbl";
-            this.countLbl.Size = new System.Drawing.Size(13, 15);
-            this.countLbl.TabIndex = 5;
-            this.countLbl.Text = "0";
+            countLbl.AutoSize = true;
+            countLbl.Location = new Point(137, 168);
+            countLbl.Name = "countLbl";
+            countLbl.Size = new Size(13, 15);
+            countLbl.TabIndex = 5;
+            countLbl.Text = "0";
             // 
             // messageChoiceDrop
             // 
-            this.messageChoiceDrop.Enabled = false;
-            this.messageChoiceDrop.FormattingEnabled = true;
-            this.messageChoiceDrop.Location = new System.Drawing.Point(29, 276);
-            this.messageChoiceDrop.Name = "messageChoiceDrop";
-            this.messageChoiceDrop.Size = new System.Drawing.Size(121, 23);
-            this.messageChoiceDrop.TabIndex = 6;
+            messageChoiceDrop.Enabled = false;
+            messageChoiceDrop.FormattingEnabled = true;
+            messageChoiceDrop.Location = new Point(29, 276);
+            messageChoiceDrop.Name = "messageChoiceDrop";
+            messageChoiceDrop.Size = new Size(121, 23);
+            messageChoiceDrop.TabIndex = 6;
             // 
             // selectFileBtn
             // 
-            this.selectFileBtn.Location = new System.Drawing.Point(189, 49);
-            this.selectFileBtn.Name = "selectFileBtn";
-            this.selectFileBtn.Size = new System.Drawing.Size(101, 38);
-            this.selectFileBtn.TabIndex = 7;
-            this.selectFileBtn.Text = "Select File";
-            this.selectFileBtn.UseVisualStyleBackColor = true;
-            this.selectFileBtn.Click += new System.EventHandler(this.selectFileBtn_Click);
+            selectFileBtn.Location = new Point(189, 49);
+            selectFileBtn.Name = "selectFileBtn";
+            selectFileBtn.Size = new Size(101, 38);
+            selectFileBtn.TabIndex = 7;
+            selectFileBtn.Text = "Select File";
+            selectFileBtn.UseVisualStyleBackColor = true;
+            selectFileBtn.Click += selectFileBtn_Click;
             // 
             // selectedFileTxt
             // 
-            this.selectedFileTxt.Location = new System.Drawing.Point(33, 58);
-            this.selectedFileTxt.Name = "selectedFileTxt";
-            this.selectedFileTxt.ReadOnly = true;
-            this.selectedFileTxt.Size = new System.Drawing.Size(150, 23);
-            this.selectedFileTxt.TabIndex = 9;
-            this.selectedFileTxt.Text = "No File Selected";
+            selectedFileTxt.Location = new Point(33, 58);
+            selectedFileTxt.Name = "selectedFileTxt";
+            selectedFileTxt.ReadOnly = true;
+            selectedFileTxt.Size = new Size(150, 23);
+            selectedFileTxt.TabIndex = 9;
+            selectedFileTxt.Text = "No File Selected";
             // 
             // selectedFileLbl
             // 
-            this.selectedFileLbl.AutoSize = true;
-            this.selectedFileLbl.Location = new System.Drawing.Point(33, 40);
-            this.selectedFileLbl.Name = "selectedFileLbl";
-            this.selectedFileLbl.Size = new System.Drawing.Size(78, 15);
-            this.selectedFileLbl.TabIndex = 10;
-            this.selectedFileLbl.Text = "Selected File :";
+            selectedFileLbl.AutoSize = true;
+            selectedFileLbl.Location = new Point(33, 40);
+            selectedFileLbl.Name = "selectedFileLbl";
+            selectedFileLbl.Size = new Size(78, 15);
+            selectedFileLbl.TabIndex = 10;
+            selectedFileLbl.Text = "Selected File :";
             // 
             // reasembledMessageTxt
             // 
-            this.reasembledMessageTxt.Location = new System.Drawing.Point(33, 390);
-            this.reasembledMessageTxt.Name = "reasembledMessageTxt";
-            this.reasembledMessageTxt.ReadOnly = true;
-            this.reasembledMessageTxt.Size = new System.Drawing.Size(486, 23);
-            this.reasembledMessageTxt.TabIndex = 11;
+            reasembledMessageTxt.Location = new Point(33, 390);
+            reasembledMessageTxt.Name = "reasembledMessageTxt";
+            reasembledMessageTxt.ReadOnly = true;
+            reasembledMessageTxt.Size = new Size(486, 23);
+            reasembledMessageTxt.TabIndex = 11;
             // 
             // selectMessageLbl
             // 
-            this.selectMessageLbl.AutoSize = true;
-            this.selectMessageLbl.Location = new System.Drawing.Point(29, 258);
-            this.selectMessageLbl.Name = "selectMessageLbl";
-            this.selectMessageLbl.Size = new System.Drawing.Size(102, 15);
-            this.selectMessageLbl.TabIndex = 12;
-            this.selectMessageLbl.Text = "Select a Message :";
+            selectMessageLbl.AutoSize = true;
+            selectMessageLbl.Location = new Point(29, 258);
+            selectMessageLbl.Name = "selectMessageLbl";
+            selectMessageLbl.Size = new Size(102, 15);
+            selectMessageLbl.TabIndex = 12;
+            selectMessageLbl.Text = "Select a Message :";
             // 
             // reasembeledMessageLbl
             // 
-            this.reasembeledMessageLbl.AutoSize = true;
-            this.reasembeledMessageLbl.ImageAlign = System.Drawing.ContentAlignment.BottomRight;
-            this.reasembeledMessageLbl.Location = new System.Drawing.Point(33, 372);
-            this.reasembeledMessageLbl.Name = "reasembeledMessageLbl";
-            this.reasembeledMessageLbl.Size = new System.Drawing.Size(138, 15);
-            this.reasembeledMessageLbl.TabIndex = 13;
-            this.reasembeledMessageLbl.Text = "Re-Assembeled Message";
+            reasembeledMessageLbl.AutoSize = true;
+            reasembeledMessageLbl.ImageAlign = ContentAlignment.BottomRight;
+            reasembeledMessageLbl.Location = new Point(33, 372);
+            reasembeledMessageLbl.Name = "reasembeledMessageLbl";
+            reasembeledMessageLbl.Size = new Size(138, 15);
+            reasembeledMessageLbl.TabIndex = 13;
+            reasembeledMessageLbl.Text = "Re-Assembeled Message";
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(548, 450);
-            this.Controls.Add(this.reasembeledMessageLbl);
-            this.Controls.Add(this.selectMessageLbl);
-            this.Controls.Add(this.reasembledMessageTxt);
-            this.Controls.Add(this.selectedFileLbl);
-            this.Controls.Add(this.selectedFileTxt);
-            this.Controls.Add(this.selectFileBtn);
-            this.Controls.Add(this.messageChoiceDrop);
-            this.Controls.Add(this.countLbl);
-            this.Controls.Add(this.messageCountLbl);
-            this.Controls.Add(this.assembleMessageBtn);
-            this.Controls.Add(this.readFileBtn);
-            this.Controls.Add(this.wordsFoundLabel);
-            this.Controls.Add(this.foundWordsBox);
-            this.Name = "Form1";
-            this.Text = "Form1";
-            this.Load += new System.EventHandler(this.Form1_Load);
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(548, 450);
+            Controls.Add(reasembeledMessageLbl);
+            Controls.Add(selectMessageLbl);
+            Controls.Add(reasembledMessageTxt);
+            Controls.Add(selectedFileLbl);
+            Controls.Add(selectedFileTxt);
+            Controls.Add(selectFileBtn);
+            Controls.Add(messageChoiceDrop);
+            Controls.Add(countLbl);
+            Controls.Add(messageCountLbl);
+            Controls.Add(assembleMessageBtn);
+            Controls.Add(readFileBtn);
+            Controls.Add(wordsFoundLabel);
+            Controls.Add(foundWordsBox);
+            Name = "Form1";
+            Text = "Form1";
+            Load += Form1_Load;
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
