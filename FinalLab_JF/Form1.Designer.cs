@@ -41,6 +41,8 @@
             reasembledMessageTxt = new TextBox();
             selectMessageLbl = new Label();
             reasembeledMessageLbl = new Label();
+            resetButton = new Button();
+            wordCountLbl = new Label();
             SuspendLayout();
             // 
             // foundWordsBox
@@ -103,6 +105,7 @@
             // 
             // messageChoiceDrop
             // 
+            messageChoiceDrop.DropDownStyle = ComboBoxStyle.DropDownList;
             messageChoiceDrop.Enabled = false;
             messageChoiceDrop.FormattingEnabled = true;
             messageChoiceDrop.Location = new Point(29, 276);
@@ -165,11 +168,32 @@
             reasembeledMessageLbl.TabIndex = 13;
             reasembeledMessageLbl.Text = "Re-Assembeled Message";
             // 
+            // resetButton
+            // 
+            resetButton.Location = new Point(237, 335);
+            resetButton.Name = "resetButton";
+            resetButton.Size = new Size(53, 24);
+            resetButton.TabIndex = 14;
+            resetButton.Text = "Reset";
+            resetButton.UseVisualStyleBackColor = true;
+            resetButton.Click += resetButton_Click;
+            // 
+            // wordCountLbl
+            // 
+            wordCountLbl.AutoSize = true;
+            wordCountLbl.Location = new Point(470, 49);
+            wordCountLbl.Name = "wordCountLbl";
+            wordCountLbl.Size = new Size(13, 15);
+            wordCountLbl.TabIndex = 15;
+            wordCountLbl.Text = "0";
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(548, 450);
+            Controls.Add(wordCountLbl);
+            Controls.Add(resetButton);
             Controls.Add(reasembeledMessageLbl);
             Controls.Add(selectMessageLbl);
             Controls.Add(reasembledMessageTxt);
@@ -185,7 +209,6 @@
             Controls.Add(foundWordsBox);
             Name = "Form1";
             Text = "Form1";
-            Load += Form1_Load;
             ResumeLayout(false);
             PerformLayout();
         }
@@ -205,5 +228,7 @@
         private TextBox reasembledMessageTxt;
         private Label selectMessageLbl;
         private Label reasembeledMessageLbl;
+        private Button resetButton;
+        private Label wordCountLbl;
     }
 }

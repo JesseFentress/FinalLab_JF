@@ -1,3 +1,5 @@
+using System.Data;
+
 namespace FinalLab_JF
 {
     public partial class Form1 : Form
@@ -20,24 +22,44 @@ namespace FinalLab_JF
             InitializeComponent();
         }
 
-        private void assembleMessageBtn_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void toggle_Enable_selectFileBtn()
         {
-            selectFileBtn.Enabled = !selectFileBtn.Enabled;
+            selectFileBtn.Enabled = true;
         }
 
         private void toggle_Enable_readFileBtn()
         {
-            readFileBtn.Enabled = !readFileBtn.Enabled;
+            readFileBtn.Enabled = true;
         }
 
         private void toggle_Enable_assembleMessageBtn()
         {
-            assembleMessageBtn.Enabled = !assembleMessageBtn.Enabled;
+            assembleMessageBtn.Enabled = true;
+        }
+
+        private void toggle_Enable_messageChoiceBox()
+        {
+            messageChoiceDrop.Enabled = true;
+        }
+
+        private void toggle_Disable_selectFileBtn()
+        {
+            selectFileBtn.Enabled = false;
+        }
+
+        private void toggle_Disable_readFileBtn()
+        {
+            readFileBtn.Enabled = false;
+        }
+
+        private void toggle_Disable_assembleMessageBtn()
+        {
+            assembleMessageBtn.Enabled = false;
+        }
+
+        private void toggle_Disable_messageChoiceBox()
+        {
+            messageChoiceDrop.Enabled = false;
         }
 
         private void selectFileBtn_Click(object sender, EventArgs e)
@@ -51,11 +73,6 @@ namespace FinalLab_JF
                 selectedFileTxt.Text = Path.GetFileName(openFileDialog.FileName);
                 toggle_Enable_readFileBtn();
             }
-        }
-
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
         }
 
         private void readAllMessages()
@@ -93,7 +110,7 @@ namespace FinalLab_JF
 
                     // Add the entire message to the dict of encoded messages
                     encodedMessages.Add(lineCount, encodedMessageLine);
-                    
+
                     lineCount++;    //  Increment the line count
                 }
             }
@@ -102,7 +119,7 @@ namespace FinalLab_JF
         private void fillListBox_FoundWordsBox()
         {
             // Iterate for all words
-            foreach (string word in  uniqueWords.Values)
+            foreach (string word in uniqueWords.Values)
             {
                 foundWordsBox.Items.Add(word);  // Add the word
             }
@@ -111,19 +128,31 @@ namespace FinalLab_JF
         private void fillChoiceBox_MessageChoiceBox()
         {
             // Iterate for all messages
-            foreach(int num in encodedMessages.Keys)
+            foreach (int num in encodedMessages.Keys)
             {
                 messageChoiceDrop.Items.Add(num);   // Add the message num
             }
+
+            messageChoiceDrop.SelectedItem = 1; // Default choice is the first message
         }
 
         private void readFileBtn_Click(object sender, EventArgs e)
         {
+
+            // Disable the select file button
+            toggle_Disable_selectFileBtn();
+
+            // Disable the read file button
+            toggle_Disable_readFileBtn();
+
             // Read the text file for messages
             readAllMessages();
-  
+
             // Update the message count displayed to the user
             countLbl.Text = encodedMessages.Count.ToString();
+
+            // Update the message count displayed to the user
+            wordCountLbl.Text = uniqueWords.Count.ToString();
 
             // Fill the text box with  all the detected words
             fillListBox_FoundWordsBox();
@@ -131,9 +160,67 @@ namespace FinalLab_JF
             // Fill the drop down box with options to select the messages
             fillChoiceBox_MessageChoiceBox();
 
+            // Enable the assemble message choice box
+            toggle_Enable_messageChoiceBox();
+
             // Enable the assemble messages button
-            toggle_Enable_assembleMessageBtn();          
+            toggle_Enable_assembleMessageBtn();
         }
 
+        private void assembleMessageBtn_Click(object sender, EventArgs e)
+        {
+            string message = "";    // Message string
+
+            int selectedMessage = (int)messageChoiceDrop.SelectedItem; // The selected message number
+
+            foreach (int n in encodedMessages[selectedMessage])
+            {
+                message += uniqueWords[n] + " ";
+            }
+
+            reasembledMessageTxt.Text = message;
+        }
+
+        private void resetButton_Click(object sender, EventArgs e)
+        {
+            // Clear the encoded messages dict
+            encodedMessages.Clear();
+
+            // Clear unique words dict
+            uniqueWords.Clear();
+
+            // Clear unique word codes dict
+            uniqueWordCodes.Clear();
+
+            // Clear reassmebled message text
+            reasembledMessageTxt.Clear();
+
+            // Clear word box
+            foundWordsBox.Items.Clear();
+
+            // Clear select box
+            messageChoiceDrop.Items.Clear();
+
+            // Clear selected file text
+            selectedFileTxt.Text = "";
+
+            // Change message count to 0
+            countLbl.Text = "0";
+
+            // Change word count to 0
+            wordCountLbl.Text = "0";
+
+            // Disable assemble message button
+            toggle_Disable_assembleMessageBtn();
+
+            // Disable read message button
+            toggle_Disable_readFileBtn();
+
+            // Disable select box
+            toggle_Disable_messageChoiceBox();
+
+            // Enable select message button
+            toggle_Enable_selectFileBtn();
+        }
     }
 }
